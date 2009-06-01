@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :salt
       t.integer :photo_id
-      t.text :body
+      t.text :bio
 
       t.timestamps
     end

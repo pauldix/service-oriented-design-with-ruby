@@ -1,3 +1,10 @@
+class Friendship < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :friend, :class_name => "User"
+  
+  after_create {|friendship| Friendship.create(:user => friendship.friend, :friend => friendship.user)}
+end
+
 # == Schema Information
 #
 # Table name: friendships
@@ -9,10 +16,3 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-
-class Friendship < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :friend, :class_name => "User"
-  
-  after_create {|friendship| Friendship.create(:user => friendship.friend, :friend => friendship.user)}
-end

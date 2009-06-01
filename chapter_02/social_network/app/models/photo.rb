@@ -1,3 +1,8 @@
+class Photo < ActiveRecord::Base
+  has_attached_file :file, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  belongs_to :user
+end
+
 # == Schema Information
 #
 # Table name: photos
@@ -13,8 +18,3 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #
-
-class Photo < ActiveRecord::Base
-  has_attached_file :file, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  belongs_to :user
-end

@@ -1,3 +1,10 @@
+class User < ActiveRecord::Base
+  belongs_to :photo
+  has_one    :stream
+  has_many   :friendships
+  has_many   :friends, :through => :friendships
+end
+
 # == Schema Information
 #
 # Table name: users
@@ -8,14 +15,7 @@
 #  password   :string(255)
 #  salt       :string(255)
 #  photo_id   :integer
-#  body       :text
+#  bio        :text
 #  created_at :datetime
 #  updated_at :datetime
 #
-
-class User < ActiveRecord::Base
-  belongs_to :photo
-  has_one    :stream
-  has_many   :friendships
-  has_many   :friends, :through => :friendships
-end

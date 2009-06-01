@@ -8,7 +8,7 @@
 #  password   :string(255)
 #  salt       :string(255)
 #  photo_id   :integer
-#  body       :text
+#  bio        :text
 #  created_at :datetime
 #  updated_at :datetime
 #
