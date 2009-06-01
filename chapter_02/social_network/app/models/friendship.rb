@@ -2,7 +2,10 @@ class Friendship < ActiveRecord::Base
   belongs_to :user
   belongs_to :friend, :class_name => "User"
   
-  after_create {|friendship| Friendship.create(:user => friendship.friend, :friend => friendship.user)}
+  after_create do |friendship| 
+    Friendship.create(:user => friendship.friend, 
+                      :friend => friendship.user)
+  end
 end
 
 # == Schema Information
