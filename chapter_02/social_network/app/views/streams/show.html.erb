@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @stream.user_id %>
+</p>
+
+<p>
+  <b>Activity:</b>
+  <%=h @stream.activity_id %>
+</p>
+
+<p>
+  <b>Activity type:</b>
+  <%=h @stream.activity_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_stream_path(@stream) %> |
+<%= link_to 'Back', streams_path %>
