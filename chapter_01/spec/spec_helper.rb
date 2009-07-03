@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/../service'
-# require 'client'
+require File.dirname(__FILE__) + '/../client'
 require 'spec'
 require 'spec/interop/test'
 require 'rack/test'
