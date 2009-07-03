@@ -7,6 +7,7 @@ describe "service" do
     it "should return a user with an email"
     it "should return a user with a password"
     it "should return a user with a bio"
+    it "should return a 404 for a user that doesn't exist"
   end
   
   describe "POST on /v1/users" do
@@ -25,12 +26,4 @@ describe "service" do
     it "should verify login credentials"
     it "should return the full user object"
   end
-end
-
-describe "client" do
-  it "should get a user"
-  it "should create a user"
-  it "should update a user"
-  it "should delete a user"
-  it "should verify login credentials"
 end
