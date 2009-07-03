@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe "service" do
-  describe "GET on /api/v1/users/:id" do
+  describe "GET on /api/v1/users/:id" do    
     before(:all) do
       User.create(:name => "paul", :email => "paul@pauldix.net", :password => "strongpass", :bio => "rubyist")
     end
-    
+
     it "should return a user by name" do
       get '/api/v1/users/paul'
       last_response.should be_ok
@@ -49,11 +49,8 @@ describe "service" do
   end
   
   describe "PUT on /api/v1/users/:id" do
-    before(:each) do
-      User.create(:name => "bryan", :email => "no spam", :password => "whatever", :bio => "rspec master")
-    end
-    
     it "should update a user" do
+      User.create(:name => "bryan", :email => "no spam", :password => "whatever", :bio => "rspec master")
       put '/api/v1/users/bryan', '{"bio": "testing freak"}'
       last_response.should be_ok
       get '/api/v1/users/bryan'
@@ -63,11 +60,29 @@ describe "service" do
   end
   
   describe "DELETE on /api/v1/users/:id" do
-    it "should delete a user"    
+    it "should delete a user" do
+      User.create(:name => "francis", :email => "no spam", :password => "whatever", :bio => "williamsburg hipster")
+      delete '/api/v1/users/francis'
+      last_response.should be_ok
+      get '/api/v1/users/francis'
+      last_response.status.should == 404
+    end
   end
   
   describe "POST on /api/v1/users/:id/sessions" do
-    it "should verify login credentials"
-    it "should return the full user object"
+    before(:all) do
+      User.create(:name => "josh", :password => "nyc.rb rules")
+    end
+    it "should return the user object on valid credentials" do
+      post '/api/v1/users/josh/sessions', '{"password": "nyc.rb rules"}'
+      last_response.should be_ok
+      user = JSON.parse(last_response.body)
+      user["name"].should == "josh"
+    end
+
+    it "should fail on invalid credentials" do
+      post '/api/v1/users/josh/sessions', '"wrong"'
+      last_response.status.should == 400
+    end    
   end
 end
