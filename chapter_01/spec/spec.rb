@@ -1,15 +1,4 @@
-require 'rubygems'
-require 'spec'
-require 'spec/interop/test'
-require 'sinatra/test'
-require 'client'
-require 'service'
-
-set :environment, :test
-Test::Unit::TestCase.send :include, Sinatra::Test
-
-DataMapper.setup(:default, {:adapter => "sqlite3", :database => "test.db.sqlite3"})
-DataMapper.auto_migrate!
+require File.dirname(__FILE__) + '/spec_helper'
 
 describe "service" do
   describe "GET on /v1/users/:id" do
