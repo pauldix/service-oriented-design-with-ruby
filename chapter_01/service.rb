@@ -23,3 +23,12 @@ get '/api/v1/users/:name' do
     error 404, "user not found"
   end
 end
+
+post '/api/v1/users' do
+  user = User.create(JSON.parse(request.body.read))
+  if user
+    "true"
+  else
+    error 400, user.errros.to_json
+  end
+end

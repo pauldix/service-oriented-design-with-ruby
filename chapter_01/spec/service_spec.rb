@@ -37,11 +37,19 @@ describe "service" do
   end
   
   describe "POST on /api/v1/users" do
-    it "should create a user"    
+    it "should create a user" do
+      post '/api/v1/users', '{"name": "trotter", "email": "trotter@pauldix.net", "password": "whatever", "bio": "another rubyist"}'
+      last_response.should be_ok
+      get '/api/v1/users/trotter'
+      user = JSON.parse(last_response.body)
+      user["name"].should  == "trotter"
+      user["email"].should == "trotter@pauldix.net"
+      user["bio"].should   == "another rubyist"
+    end
   end
   
   describe "PUT on /api/v1/users/:id" do
-    it "should update a user"    
+    it "should update a user"
   end
   
   describe "DELETE on /api/v1/users/:id" do
