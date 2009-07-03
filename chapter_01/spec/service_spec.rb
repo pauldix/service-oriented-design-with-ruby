@@ -38,18 +38,28 @@ describe "service" do
   
   describe "POST on /api/v1/users" do
     it "should create a user" do
-      post '/api/v1/users', '{"name": "trotter", "email": "trotter@pauldix.net", "password": "whatever", "bio": "another rubyist"}'
+      post '/api/v1/users', '{"name": "trotter", "email": "trotter@trottercashion.com", "password": "whatever", "bio": "southern bell"}'
       last_response.should be_ok
       get '/api/v1/users/trotter'
       user = JSON.parse(last_response.body)
       user["name"].should  == "trotter"
-      user["email"].should == "trotter@pauldix.net"
-      user["bio"].should   == "another rubyist"
+      user["email"].should == "trotter@trottercashion.com"
+      user["bio"].should   == "southern bell"
     end
   end
   
   describe "PUT on /api/v1/users/:id" do
-    it "should update a user"
+    before(:each) do
+      User.create(:name => "bryan", :email => "bryan@brynary.com", :password => "whatever", :bio => "rspec master")
+    end
+    
+    it "should update a user" do
+      put '/api/v1/users/bryan', '{"bio": "testing freak"}'
+      last_response.should be_ok
+      get '/api/v1/users/bryan'
+      user = JSON.parse(last_response.body)
+      user["bio"].should == "testing freak"
+    end
   end
   
   describe "DELETE on /api/v1/users/:id" do

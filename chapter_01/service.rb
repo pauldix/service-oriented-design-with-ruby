@@ -20,7 +20,7 @@ get '/api/v1/users/:name' do
   if user
     user.to_json(:exclude => :password)
   else
-    error 404, "user not found"
+    error 404, "user not found".to_json
   end
 end
 
@@ -29,6 +29,17 @@ post '/api/v1/users' do
   if user
     "true"
   else
-    error 400, user.errros.to_json
+    error 400, "" # do nothing for now. we'll cover later
+  end
+end
+
+put '/api/v1/users/:name' do
+  user = User.first(:name => params[:name])
+  if user
+    user.update_attributes(JSON.parse(request.body.read))
+    # we don't have any validations right now. we'll cover later
+    "true"
+  else
+    error 404, "user not found".to_json
   end
 end
