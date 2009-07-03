@@ -38,19 +38,19 @@ describe "service" do
   
   describe "POST on /api/v1/users" do
     it "should create a user" do
-      post '/api/v1/users', '{"name": "trotter", "email": "trotter@trottercashion.com", "password": "whatever", "bio": "southern bell"}'
+      post '/api/v1/users', '{"name": "trotter", "email": "no spam", "password": "whatever", "bio": "southern bell"}'
       last_response.should be_ok
       get '/api/v1/users/trotter'
       user = JSON.parse(last_response.body)
       user["name"].should  == "trotter"
-      user["email"].should == "trotter@trottercashion.com"
+      user["email"].should == "no spam"
       user["bio"].should   == "southern bell"
     end
   end
   
   describe "PUT on /api/v1/users/:id" do
     before(:each) do
-      User.create(:name => "bryan", :email => "bryan@brynary.com", :password => "whatever", :bio => "rspec master")
+      User.create(:name => "bryan", :email => "no spam", :password => "whatever", :bio => "rspec master")
     end
     
     it "should update a user" do
