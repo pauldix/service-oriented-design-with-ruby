@@ -6,28 +6,24 @@ class User
   include Typhoeus
   remote_defaults :base_uri => "http://localhost:3000"
   define_remote_method :find, 
-                       :path => "/api/v1/users/:name",
-                       :on_success => lambda {|response| 
-                         JSON.parse(response.body)}
+    :path => "/api/v1/users/:name",
+    :on_success => lambda {|response| JSON.parse(response.body)}
   define_remote_method :create_remote,
-                       :method => :post,
-                       :path => "/api/v1/users",
-                       :on_success => lambda {|response| 
-                         JSON.parse(response.body)}
+    :method => :post,
+    :path => "/api/v1/users",
+    :on_success => lambda {|response| JSON.parse(response.body)}
   define_remote_method :update_remote,
-                       :method => :put,
-                       :path => "/api/v1/users/:name",
-                       :on_success => lambda {|response| 
-                         JSON.parse(response.body)}
+    :method => :put,
+    :path => "/api/v1/users/:name",
+    :on_success => lambda {|response| JSON.parse(response.body)}
   define_remote_method :destroy,
-                       :method => :delete,
-                       :path => "/api/v1/users/:name",
-                       :on_success => lambda {|response| true}
+    :method => :delete,
+    :path => "/api/v1/users/:name",
+    :on_success => lambda {|response| true}
   define_remote_method :verify,
-                       :method => :post,
-                       :path => "/api/v1/users/:name/sessions",
-                       :on_success => lambda {|response| 
-                         JSON.parse(response.body)}
+    :method => :post,
+    :path => "/api/v1/users/:name/sessions",
+    :on_success => lambda {|response| JSON.parse(response.body)}
                        
   def self.create(attributes = {})
     create_remote(:body => attributes.to_json)
