@@ -108,6 +108,7 @@ describe "service" do
     before(:all) do
       User.create(:name => "josh", :password => "nyc.rb rules")
     end
+    
     it "should return the user object on valid credentials" do
       post '/api/v1/users/josh/sessions', {
         :password => "nyc.rb rules"}.to_json
