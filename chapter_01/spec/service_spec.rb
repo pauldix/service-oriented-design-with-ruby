@@ -10,37 +10,46 @@ def app
   Sinatra::Application
 end
 
-DataMapper.setup(:default, {:adapter => "sqlite3", :database => "test.db.sqlite3"})
+DataMapper.setup(:default, 
+  {:adapter => "sqlite3", :database => "test.db.sqlite3"})
 DataMapper.auto_migrate!
 
 describe "service" do
   describe "GET on /api/v1/users/:id" do    
     before(:all) do
-      User.create(:name => "paul", :email => "paul@pauldix.net", :password => "strongpass", :bio => "rubyist")
+      User.create(
+        :name => "paul", 
+        :email => "paul@pauldix.net", 
+        :password => "strongpass", 
+        :bio => "rubyist")
     end
 
     it "should return a user by name" do
       get '/api/v1/users/paul'
       last_response.should be_ok
-      JSON.parse(last_response.body)["name"].should == "paul"
+      attributes = JSON.parse(last_response.body)
+      attributes["name"].should == "paul"
     end
     
     it "should return a user with an email" do
       get '/api/v1/users/paul'
       last_response.should be_ok
-      JSON.parse(last_response.body)["email"].should == "paul@pauldix.net"
+      attributes = JSON.parse(last_response.body)
+      attributes["email"].should == "paul@pauldix.net"
     end
     
     it "should not return a user's password" do
       get '/api/v1/users/paul'
       last_response.should be_ok
-      JSON.parse(last_response.body).should_not have_key("password")
+      attributes = JSON.parse(last_response.body)
+      attributes.should_not have_key("password")
     end
     
     it "should return a user with a bio" do
       get '/api/v1/users/paul'
       last_response.should be_ok
-      JSON.parse(last_response.body)["bio"].should == "rubyist"      
+      attributes = JSON.parse(last_response.body)
+      attributes["bio"].should == "rubyist"      
     end
     
     it "should return a 404 for a user that doesn't exist" do
@@ -51,30 +60,43 @@ describe "service" do
   
   describe "POST on /api/v1/users" do
     it "should create a user" do
-      post '/api/v1/users', '{"name": "trotter", "email": "no spam", "password": "whatever", "bio": "southern bell"}'
+      post '/api/v1/users', {
+          :name     => "trotter", 
+          :email    => "no spam", 
+          :password => "whatever", 
+          :bio      => "southern bell"}.to_json
       last_response.should be_ok
       get '/api/v1/users/trotter'
-      user = JSON.parse(last_response.body)
-      user["name"].should  == "trotter"
-      user["email"].should == "no spam"
-      user["bio"].should   == "southern bell"
+      attributes = JSON.parse(last_response.body)
+      attributes["name"].should  == "trotter"
+      attributes["email"].should == "no spam"
+      attributes["bio"].should   == "southern bell"
     end
   end
   
   describe "PUT on /api/v1/users/:id" do
     it "should update a user" do
-      User.create(:name => "bryan", :email => "no spam", :password => "whatever", :bio => "rspec master")
-      put '/api/v1/users/bryan', '{"bio": "testing freak"}'
+      User.create(
+        :name => "bryan", 
+        :email => "no spam", 
+        :password => "whatever", 
+        :bio => "rspec master")
+      put '/api/v1/users/bryan', {
+        :bio => "testing freak"}.to_json
       last_response.should be_ok
       get '/api/v1/users/bryan'
-      user = JSON.parse(last_response.body)
-      user["bio"].should == "testing freak"
+      attributes = JSON.parse(last_response.body)
+      attributes["bio"].should == "testing freak"
     end
   end
   
   describe "DELETE on /api/v1/users/:id" do
     it "should delete a user" do
-      User.create(:name => "francis", :email => "no spam", :password => "whatever", :bio => "williamsburg hipster")
+      User.create(
+        :name     => "francis", 
+        :email    => "no spam", 
+        :password => "whatever", 
+        :bio      => "williamsburg hipster")
       delete '/api/v1/users/francis'
       last_response.should be_ok
       get '/api/v1/users/francis'
@@ -87,10 +109,11 @@ describe "service" do
       User.create(:name => "josh", :password => "nyc.rb rules")
     end
     it "should return the user object on valid credentials" do
-      post '/api/v1/users/josh/sessions', '{"password": "nyc.rb rules"}'
+      post '/api/v1/users/josh/sessions', {
+        :password => "nyc.rb rules"}.to_json
       last_response.should be_ok
-      user = JSON.parse(last_response.body)
-      user["name"].should == "josh"
+      attributes = JSON.parse(last_response.body)
+      attributes["name"].should == "josh"
     end
 
     it "should fail on invalid credentials" do
