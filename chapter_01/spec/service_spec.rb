@@ -118,7 +118,8 @@ describe "service" do
     end
 
     it "should fail on invalid credentials" do
-      post '/api/v1/users/josh/sessions', '"wrong"'
+      post '/api/v1/users/josh/sessions', {
+        :password => "wrong"}.to_json
       last_response.status.should == 400
     end    
   end

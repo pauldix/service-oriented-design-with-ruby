@@ -80,7 +80,10 @@ end
 # verify a user name and password
 post '/api/v1/users/:name/sessions' do
   begin
-    user = User.first(:name => params[:name], :password => JSON.parse(request.body.read)["password"])
+    attributes = JSON.parse(request.body.read)
+    user = User.first(
+      :name     => params["name"], 
+      :password => attributes["password"])
     if user
       user.to_json(:exclude => :password)
     else
