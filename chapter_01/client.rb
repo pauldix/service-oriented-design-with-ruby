@@ -7,7 +7,13 @@ class User
   remote_defaults :base_uri => "http://localhost:3000"
   define_remote_method :find, 
     :path => "/api/v1/users/:name",
-    :on_success => lambda {|response| JSON.parse(response.body)}
+    :on_success => lambda {|response| JSON.parse(response.body)},
+    :on_failure => lambda {|response| 
+      if response.code == 404
+        nil
+      else
+        raise response.body
+      end}
   define_remote_method :create_remote,
     :method => :post,
     :path => "/api/v1/users",

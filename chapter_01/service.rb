@@ -18,9 +18,7 @@ end
 env_arg = ARGV.index("-e")
 if env_arg && ARGV[env_arg+1] == "test"
   DataMapper.setup(:default, {:adapter => "sqlite3", :database => "test.db.sqlite3"})
-  DataMapper.auto_migrate!
-  User.create(:name => "paul", :email => "paul@pauldix.net", :password => "strongpass", :bio => "rubyist")
-  User.create(:name => "bryan", :email => "no spam", :password => "strongpass", :bio => "rubyist")
+  DataMapper.auto_migrate! # start with a clean db
 else
   DataMapper.setup(:default, {:adapter => "sqlite3", :database => "db.sqlite3"})
 end
