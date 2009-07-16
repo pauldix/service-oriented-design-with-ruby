@@ -9,7 +9,10 @@ describe "client" do
   end
   
   it "should create a user" do
-    user = User.create({:name => "trotter", :email => "no spam", :password => "whatev"})
+    user = User.create({
+      :name => "trotter", 
+      :email => "no spam", 
+      :password => "whatev"})
     user["name"].should  == "trotter"
     user["email"].should == "no spam"
   end
