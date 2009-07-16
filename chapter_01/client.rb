@@ -29,7 +29,13 @@ class User
   define_remote_method :verify,
     :method => :post,
     :path => "/api/v1/users/:name/sessions",
-    :on_success => lambda {|response| JSON.parse(response.body)}
+    :on_success => lambda {|response| JSON.parse(response.body)},
+    :on_failure => lambda {|response|
+      if response.code == 400
+        nil
+      else
+        raise response.body
+      end}
                        
   def self.create(attributes = {})
     create_remote(:body => attributes.to_json)

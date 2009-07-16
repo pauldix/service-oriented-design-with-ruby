@@ -44,14 +44,20 @@ describe "client" do
     user = User.update("paul", {:bio => "rubyist and author"})
     user["name"].should == "paul"
     user["bio"].should  == "rubyist and author"
+    User.find(:name => "paul").should == user
   end
   
   it "should destroy a user" do
     User.destroy(:name => "bryan").should == true
+    User.find(:name => "bryan").should be_nil
   end
   
   it "should verify login credentials" do
     user = User.login("paul", "strongpass")
     user["name"].should == "paul"
+  end
+  
+  it "should return nil with invalid credentials" do
+    User.login("paul", "wrongpassword").should be_nil
   end
 end
