@@ -7,7 +7,7 @@ class User
   remote_defaults :base_uri => "http://localhost:3000"
   define_remote_method :find, 
     :path => "/api/v1/users/:name",
-    :on_success => lambda {|response| JSON.parse(response.body)},
+    :on_success => lambda {|res| JSON.parse(res.body)},
     :on_failure => lambda {|response| 
       if response.code == 404
         nil
@@ -17,19 +17,19 @@ class User
   define_remote_method :create_remote,
     :method => :post,
     :path => "/api/v1/users",
-    :on_success => lambda {|response| JSON.parse(response.body)}
+    :on_success => lambda {|res| JSON.parse(res.body)}
   define_remote_method :update_remote,
     :method => :put,
     :path => "/api/v1/users/:name",
-    :on_success => lambda {|response| JSON.parse(response.body)}
+    :on_success => lambda {|res| JSON.parse(res.body)}
   define_remote_method :destroy,
     :method => :delete,
     :path => "/api/v1/users/:name",
-    :on_success => lambda {|response| true}
+    :on_success => lambda {|res| true}
   define_remote_method :verify,
     :method => :post,
     :path => "/api/v1/users/:name/sessions",
-    :on_success => lambda {|response| JSON.parse(response.body)},
+    :on_success => lambda {|res| JSON.parse(res.body)},
     :on_failure => lambda {|response|
       if response.code == 400
         nil
