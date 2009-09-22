@@ -1,0 +1,187 @@
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:24:54', '2009-09-20 22:24:54', 'value for user_id', 1)[0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:24:54', '2009-09-20 22:24:54', 'value for user_id', 0)[0m
+  [4;36;1mVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:26:06', '2009-09-20 22:26:06', 'value for user_id', 1)[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:30:32', '2009-09-20 22:30:32', 'value for user_id', 1)[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:30:32', '2009-09-20 22:30:32', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:31:00', '2009-09-20 22:31:00', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'whatevs' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:31:00', '2009-09-20 22:31:00', 'whatevs', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES(NULL, '2009-09-20 22:31:31', '2009-09-20 22:31:31', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:32:15', '2009-09-20 22:32:15', NULL, 1)[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:32:27', '2009-09-20 22:32:27', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:32:27', '2009-09-20 22:32:27', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'whatevs' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:32:27', '2009-09-20 22:32:27', 'whatevs', 1)[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mSQL (4.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:44:06', '2009-09-20 22:44:06', 'value for user_id', 1)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:46:35', '2009-09-20 22:46:35', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:47:50', '2009-09-20 22:47:50', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:27', '2009-09-20 22:49:27', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mVote Update (0.1ms)[0m   [0mUPDATE "votes" SET "updated_at" = '2009-09-20 22:49:27', "value" = -1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:46', '2009-09-20 22:49:46', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (1.6ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mVote Update (0.1ms)[0m   [0mUPDATE "votes" SET "updated_at" = '2009-09-20 22:49:46', "value" = -1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.7ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:50', '2009-09-20 22:49:50', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:50', '2009-09-20 22:49:50', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'whatevs' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:50', '2009-09-20 22:49:50', 'whatevs', 1)[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (1.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:50', '2009-09-20 22:49:50', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 22:49:50', '2009-09-20 22:49:50', 'value for user_id', 1)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mVote Update (0.1ms)[0m   [0;1mUPDATE "votes" SET "updated_at" = '2009-09-20 22:49:50', "value" = -1 WHERE "id" = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.6ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:22:37', '2009-09-20 23:22:37', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:22:37', '2009-09-20 23:22:37', 'value for user_id', 1)[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'whatevs' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:22:37', '2009-09-20 23:22:37', 'whatevs', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:22:37', '2009-09-20 23:22:37', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:22:37', '2009-09-20 23:22:37', 'value for user_id', 1)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mVote Update (0.1ms)[0m   [0;1mUPDATE "votes" SET "updated_at" = '2009-09-20 23:22:37', "value" = -1 WHERE "id" = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.6ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:24:06', '2009-09-20 23:24:06', 'value for user_id', 1)[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:24:06', '2009-09-20 23:24:06', 'value for user_id', 1)[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'whatevs' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.1ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:24:06', '2009-09-20 23:24:06', 'whatevs', 1)[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id IS NULL) LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" IS NULL AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:24:06', '2009-09-20 23:24:06', 'value for user_id', 1)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id') LIMIT 1[0m
+  [4;36;1mVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('value for entry_id', '2009-09-20 23:24:06', '2009-09-20 23:24:06', 'value for user_id', 1)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.6ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = 'value for user_id' AND "votes".entry_id = 'value for entry_id' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mVote Update (0.1ms)[0m   [0;1mUPDATE "votes" SET "updated_at" = '2009-09-20 23:24:06', "value" = -1 WHERE "id" = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."entry_id" = 'value for entry_id' AND "votes"."user_id" = 'value for user_id') LIMIT 1[0m
+
+
+Processing VotesController#create (for 0.0.0.0 at 2009-09-21 16:10:04) [PUT]
+  Parameters: {"entry_id"=>"45", "body"=>"\"up\"", "user_id"=>"3"}
+Rendering votes/create
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/votes/create?body=%22up%22&entry_id=45&user_id=3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+
+
+Processing VotesController#create (for 0.0.0.0 at 2009-09-21 16:11:32) [PUT]
+  Parameters: {"entry_id"=>"45", "body"=>"\"up\"", "user_id"=>"3"}
+
+
+Processing VotesController#create (for 0.0.0.0 at 2009-09-21 16:11:47) [PUT]
+  Parameters: {"entry_id"=>"45", "body"=>"\"up\"", "user_id"=>"3"}
+
+
+Processing VotesController#/api/v1/ratings/entries/45/users/3/vote (for 0.0.0.0 at 2009-09-21 16:12:41) [PUT]
+  Parameters: {"body"=>"\"up\""}
+Rendering votes//api/v1/ratings/entries/45/users/3/vote
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/votes/%2Fapi%2Fv1%2Fratings%2Fentries%2F45%2Fusers%2F3%2Fvote?body=%22up%22]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+
+
+Processing VotesController#/api/v1/ratings/entries/45/users/3/vote (for 0.0.0.0 at 2009-09-21 16:13:09) [PUT]
+  Parameters: {"body"=>"\"up\""}
+Rendering votes//api/v1/ratings/entries/45/users/3/vote
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://test.host/votes/%2Fapi%2Fv1%2Fratings%2Fentries%2F45%2Fusers%2F3%2Fvote?body=%22up%22]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+
+
+Processing VotesController#create (for 0.0.0.0 at 2009-09-21 16:13:34) [PUT]
+  Parameters: {"entry_id"=>"45", "body"=>"\"up\"", "user_id"=>"3"}
+
+
+Processing VotesController#create (for 0.0.0.0 at 2009-09-21 16:15:06) [PUT]
+  Parameters: {"entry_id"=>"45", "user_id"=>"3"}

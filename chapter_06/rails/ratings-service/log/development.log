@@ -1,0 +1,1158 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20090920213313)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entry_id" varchar(255), "user_id" varchar(255), "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090920213313')[0m
+Migrating to CreateComments (20090920220953)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090920220953')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entry_id" varchar(255), "user_id" varchar(255), "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090920220953')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090920213313')[0m
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:14:44) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+RuntimeError ("up"):
+  app/controllers/votes_controller.rb:3:in `create'
+
+Rendered rescues/_trace (90.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:24:32) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+ActionView::MissingTemplate (Missing template votes/"618: unexpected token at '\"up\"'".erb in view path app/views):
+  app/controllers/votes_controller.rb:12:in `create'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-21 16:26:47) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+SyntaxError (/Users/paul/work/service-oriented-design-in-ruby/chapter_06/rails/ratings-service/app/controllers/votes_controller.rb:14: syntax error, unexpected tINTEGER, expecting kEND):
+  
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:27:29) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+ActionView::MissingTemplate (Missing template votes/"618: unexpected token at '\"up\"'".erb in view path app/views):
+  app/controllers/votes_controller.rb:20:in `create'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:31:08) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+Completed in 2ms (View: 1, DB: 0) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:31:33) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:4:in `create'
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:53:31) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:53:49) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:53:49) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (124.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:53:51) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 16:53:58) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+
+JSON::ParserError (618: unexpected token at '"up"'):
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  json (1.1.9) lib/json/common.rb:122:in `parse'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:07) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45') LIMIT 1[0m
+  [4;35;1mVote Create (25.2ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('45', '2009-09-21 21:05:07', '2009-09-21 21:05:07', '3', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template votes/true.erb in view path app/views):
+  app/controllers/votes_controller.rb:16:in `create'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:43) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:52) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:53) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 73ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:53) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:53) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:54) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"3"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '3' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/3/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:05:59) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('45', '2009-09-21 21:05:59', '2009-09-21 21:05:59', '4', 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-21 17:09:26) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+
+SyntaxError (/Users/paul/work/service-oriented-design-in-ruby/chapter_06/rails/ratings-service/app/controllers/votes_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+      puts vote.count
+          ^):
+  
+
+Rendered rescues/_trace (28.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:09:37) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+Completed in 3ms (View: 1, DB: 0) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:09:51) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+Completed in 52ms (View: 1, DB: 0) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:10:04) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+
+SyntaxError (/Users/paul/work/service-oriented-design-in-ruby/chapter_06/rails/ratings-service/app/models/vote.rb:19: syntax error, unexpected $end):
+  app/controllers/votes_controller.rb:5:in `create'
+
+Rendered rescues/_trace (107.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:10:46) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+
+SyntaxError (/Users/paul/work/service-oriented-design-in-ruby/chapter_06/rails/ratings-service/app/models/vote.rb:19: syntax error, unexpected $end):
+  app/controllers/votes_controller.rb:5:in `create'
+
+Rendered rescues/_trace (132.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:11:00) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 33ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:11:56) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 14ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:12:20) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 14ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:02) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:03) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:03) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 12ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:03) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:04) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:04) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 14ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:04) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 15ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:04) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:13:45) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.4ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 14ms (View: 1, DB: 1) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20090920213313)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entry_id" varchar(255), "user_id" varchar(255), "value" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090920213313')[0m
+Migrating to CreateComments (20090920220953)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090920220953')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:14:26) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('45', '2009-09-21 21:14:27', '2009-09-21 21:14:27', '4', 'up')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 32ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:14:49) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:14:50) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '45' AND "votes".id <> 1) LIMIT 1[0m
+Completed in 72ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:14:55) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 400 Bad Request [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:15:20) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: method):
+  app/models/vote.rb:14:in `create_or_update'
+  app/controllers/votes_controller.rb:6:in `create'
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:15) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45') LIMIT 1[0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('45', '2009-09-21 21:16:15', '2009-09-21 21:16:15', '5', 'up')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:17) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:17) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:18) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:18) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:19) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:19) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:50) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:50) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:51) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:16:52) [PUT]
+  Parameters: {"entry_id"=>"45", "method"=>:put, "user_id"=>"5"}
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '5' AND "votes".entry_id = '45' AND "votes".id <> 2) LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/users/5/vote]
+  [4;36;1mVote Load (0.6ms)[0m   [0;1mSELECT * FROM "votes" LIMIT 30 OFFSET 0[0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" LIMIT 30 OFFSET 0[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '3') LIMIT 30 OFFSET 0[0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4') LIMIT 30 OFFSET 0[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."value" IS NULL AND "votes"."user_id" = '4') LIMIT 30 OFFSET 0[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."value" = 'up' AND "votes"."user_id" = '4') LIMIT 30 OFFSET 0[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."value" = 'down' AND "votes"."user_id" = '4') LIMIT 30 OFFSET 0[0m
+  [4;36;1mVote Load (0.7ms)[0m   [0;1mSELECT * FROM "votes" WHERE (value = 'up') [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:24) [PUT]
+  Parameters: {"entry_id"=>"42", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '42') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '42') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('42', '2009-09-21 21:56:24', '2009-09-21 21:56:24', '4', 'up')[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '42' AND "votes".id <> 3) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/42/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:28) [PUT]
+  Parameters: {"entry_id"=>"41", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '41') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '41') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('41', '2009-09-21 21:56:28', '2009-09-21 21:56:28', '4', 'up')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '41' AND "votes".id <> 4) LIMIT 1[0m
+Completed in 70ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/41/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:35) [PUT]
+  Parameters: {"entry_id"=>"39", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '39') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '39') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('39', '2009-09-21 21:56:35', '2009-09-21 21:56:35', '4', 'up')[0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '39' AND "votes".id <> 5) LIMIT 1[0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/39/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:39) [PUT]
+  Parameters: {"entry_id"=>"2", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '2') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '2') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('2', '2009-09-21 21:56:39', '2009-09-21 21:56:39', '4', 'up')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '2' AND "votes".id <> 6) LIMIT 1[0m
+Completed in 15ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/2/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:42) [PUT]
+  Parameters: {"entry_id"=>"22", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '22') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '22') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('22', '2009-09-21 21:56:42', '2009-09-21 21:56:42', '4', 'up')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '22' AND "votes".id <> 7) LIMIT 1[0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/22/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:46) [PUT]
+  Parameters: {"entry_id"=>"23", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '23') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '23') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('23', '2009-09-21 21:56:46', '2009-09-21 21:56:46', '4', 'up')[0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '23' AND "votes".id <> 8) LIMIT 1[0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/23/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:48) [PUT]
+  Parameters: {"entry_id"=>"24", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '24') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '24') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('24', '2009-09-21 21:56:48', '2009-09-21 21:56:48', '4', 'up')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '24' AND "votes".id <> 9) LIMIT 1[0m
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/24/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:56:51) [PUT]
+  Parameters: {"entry_id"=>"25", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '25') LIMIT 1[0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '25') LIMIT 1[0m
+  [4;36;1mVote Create (38.1ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('25', '2009-09-21 21:56:51', '2009-09-21 21:56:51', '4', 'up')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '25' AND "votes".id <> 10) LIMIT 1[0m
+Completed in 51ms (View: 1, DB: 39) | 200 OK [http://localhost/api/v1/ratings/entries/25/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:57:02) [PUT]
+  Parameters: {"entry_id"=>"78", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '78') LIMIT 1[0m
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('78', '2009-09-21 21:57:02', '2009-09-21 21:57:02', '4', 'down')[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '78' AND "votes".id <> 11) LIMIT 1[0m
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/78/users/4/vote]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-09-21 17:57:08) [PUT]
+  Parameters: {"entry_id"=>"79", "method"=>:put, "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '79') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '79') LIMIT 1[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("entry_id", "created_at", "updated_at", "user_id", "value") VALUES('79', '2009-09-21 21:57:08', '2009-09-21 21:57:08', '4', 'down')[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT "votes".id FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes".entry_id = '79' AND "votes".id <> 12) LIMIT 1[0m
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/79/users/4/vote]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:37:46) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `pagination_by_user_id_and_value' for #<Class:0x2325044>):
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:170:in `method_missing'
+  app/models/vote.rb:33:in `entry_ids_for_user'
+  app/models/vote.rb:28:in `voted_up_for_user_id'
+  app/controllers/votes_controller.rb:29:in `entry_ids_voted_up_for_user'
+
+Rendered rescues/_trace (89.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."value" = 'down' AND "votes"."user_id" = '4') LIMIT 30 OFFSET 0[0m
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:39:05) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+
+WillPaginate::InvalidPage (0 given as value, which translates to '0' as page number):
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:51:in `initialize'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:86:in `new'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:86:in `create'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:184:in `method_missing'
+  app/models/vote.rb:33:in `entry_ids_for_user'
+  app/models/vote.rb:28:in `voted_up_for_user_id'
+  app/controllers/votes_controller.rb:29:in `entry_ids_voted_up_for_user'
+
+Rendered rescues/_trace (100.7ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:39:39) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+
+WillPaginate::InvalidPage (0 given as value, which translates to '0' as page number):
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:51:in `initialize'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:86:in `new'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:86:in `create'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:184:in `method_missing'
+  app/models/vote.rb:33:in `entry_ids_for_user'
+  app/models/vote.rb:28:in `voted_up_for_user_id'
+  app/controllers/votes_controller.rb:29:in `entry_ids_voted_up_for_user'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:41:06) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.6ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:41:15) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.6ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:41:41) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.9ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:41:56) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.7ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:42:35) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.7ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:43:13) [GET]
+  Parameters: {"user_id"=>"4", "per_page"=>"2"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 2 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?per_page=2]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:48:48) [GET]
+  Parameters: {"user_id"=>"4", "per_page"=>"2"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 2 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?per_page=2]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:48:55) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.6ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:49:06) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"2"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 2 OFFSET 2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?page=2&per_page=2]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:49:10) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mVote Load (0.4ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 4 OFFSET 4[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?page=2&per_page=4]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:49:14) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"10"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 10 OFFSET 10[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?page=2&per_page=10]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 18:49:23) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"8"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 8 OFFSET 8[0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/up?page=2&per_page=8]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-21 18:52:38) [GET]
+
+ActionController::RoutingError (No route matches "/api/v1/ratings/users/4/down" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:52:55) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 25 OFFSET 0[0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/down]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:57:21) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 25 OFFSET 0[0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/down]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:57:22) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mVote Load (0.4ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 25 OFFSET 0[0m
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/down]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:57:22) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 25 OFFSET 0[0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/down]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:57:32) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 1 OFFSET 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/down?page=2&per_page=1]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 18:57:37) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"1", "per_page"=>"1"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/down?page=1&per_page=1]
+
+
+Processing VotesController#totals_for_entry (for 127.0.0.1 at 2009-09-21 19:03:51) [GET]
+  Parameters: {"entry_id"=>"45"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'down')) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/entries/45/totals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-21 19:08:01) [GET]
+
+ActionController::RoutingError (No route matches "/api/v1/ratings/entries/totals" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#totals_for_entries (for 127.0.0.1 at 2009-09-21 19:08:32) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  app/controllers/votes_controller.rb:79:in `totals_for_entries'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#totals_for_entries (for 127.0.0.1 at 2009-09-21 19:09:04) [GET]
+  Parameters: {"ids"=>"45,22"}
+
+NameError (undefined local variable or method `entry_id' for #<VotesController:0x22db6b0>):
+  app/controllers/votes_controller.rb:82:in `totals_for_entries'
+  app/controllers/votes_controller.rb:81:in `each'
+  app/controllers/votes_controller.rb:81:in `inject'
+  app/controllers/votes_controller.rb:81:in `totals_for_entries'
+
+Rendered rescues/_trace (100.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#totals_for_entries (for 127.0.0.1 at 2009-09-21 19:09:27) [GET]
+  Parameters: {"ids"=>"45,22"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = NULL) AND (value = 'up')) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = NULL) AND (value = 'down')) [0m
+
+NoMethodError (undefined method `merge!' for "45":String):
+  app/controllers/votes_controller.rb:82:in `totals_for_entries'
+  app/controllers/votes_controller.rb:81:in `each'
+  app/controllers/votes_controller.rb:81:in `inject'
+  app/controllers/votes_controller.rb:81:in `totals_for_entries'
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#totals_for_entries (for 127.0.0.1 at 2009-09-21 19:09:50) [GET]
+  Parameters: {"ids"=>"45,22"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'down')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '22') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '22') AND (value = 'down')) [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/totals?ids=45,22]
+
+
+Processing VotesController#totals_for_entry (for 127.0.0.1 at 2009-09-21 19:10:51) [GET]
+  Parameters: {"entry_id"=>"45"}
+
+ActionController::UnknownAction (No action responded to totals_for_entry. Actions: create, entry_ids_voted_down_for_user, entry_ids_voted_up_for_user, and totals_for_entries):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#totals_for_entry (for 127.0.0.1 at 2009-09-21 20:18:52) [GET]
+  Parameters: {"entry_id"=>"45"}
+
+ActionController::UnknownAction (No action responded to totals_for_entry. Actions: create, entry_ids_voted_down_for_user, entry_ids_voted_up_for_user, and totals_for_entries):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#totals_for_entries (for 127.0.0.1 at 2009-09-21 20:31:05) [GET]
+  Parameters: {"ids"=>"45,22"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '45') AND (value = 'down')) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '22') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((entry_id = '22') AND (value = 'down')) [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/entries/totals?ids=45,22]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 20:31:17) [GET]
+  Parameters: {"user_id"=>"4", "page"=>"2", "per_page"=>"10"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 10 OFFSET 10[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up?page=2&per_page=10]
+
+
+Processing VotesController#entry_ids_voted_up_for_user (for 127.0.0.1 at 2009-09-21 20:31:24) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mVote Load (0.7ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'up') LIMIT 25 OFFSET 0[0m
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/up]
+
+
+Processing VotesController#entry_ids_voted_down_for_user (for 127.0.0.1 at 2009-09-21 20:31:36) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;35;1mVote Load (0.4ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."value" = 'down') LIMIT 25 OFFSET 0[0m
+Completed in 15ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/down]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:31:57) [GET]
+  Parameters: {"ids"=>"45,78,102", "user_id"=>"4"}
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '102') LIMIT 1[0m
+
+NameError (undefined local variable or method `data' for #<VotesController:0x24bc0d8>):
+  app/controllers/votes_controller.rb:104:in `votes_for_users'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:34) [GET]
+  Parameters: {"ids"=>"45,78,102", "user_id"=>"4"}
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '102') LIMIT 1[0m
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,102]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:39) [GET]
+  Parameters: {"ids"=>"45,78,75", "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '75') LIMIT 1[0m
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,75]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:43) [GET]
+  Parameters: {"ids"=>"45,78,44", "user_id"=>"4"}
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;35;1mVote Load (0.1ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '44') LIMIT 1[0m
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,44]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:44) [GET]
+  Parameters: {"ids"=>"45,78,43", "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;36;1mVote Load (0.1ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '43') LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,43]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:46) [GET]
+  Parameters: {"ids"=>"45,78,2", "user_id"=>"4"}
+  [4;35;1mVote Load (0.3ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '2') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,2]
+
+
+Processing VotesController#votes_for_users (for 127.0.0.1 at 2009-09-21 20:32:46) [GET]
+  Parameters: {"ids"=>"45,78,2", "user_id"=>"4"}
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '45') LIMIT 1[0m
+  [4;35;1mVote Load (0.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '78') LIMIT 1[0m
+  [4;36;1mVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes"."user_id" = '4' AND "votes"."entry_id" = '2') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/votes?ids=45,78,2]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:37:23) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = '4') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = '4') [0m
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:37:31) [GET]
+  Parameters: {"user_id"=>"3"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = '3') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (user_id = '3') [0m
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/3/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:37:52) [GET]
+  Parameters: {"user_id"=>"3"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '3') AND (value = 'down')) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '3') AND (value = 'up')) [0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/3/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:37:55) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:38:10) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:52:45) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:53:25) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:53:25) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:53:25) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
+
+
+Processing VotesController#totals_for_user (for 127.0.0.1 at 2009-09-21 20:53:26) [GET]
+  Parameters: {"user_id"=>"4"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'up')) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ((user_id = '4') AND (value = 'down')) [0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/api/v1/ratings/users/4/totals]
