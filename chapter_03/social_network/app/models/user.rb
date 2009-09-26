@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_one    :stream
   has_many   :friendships
   has_many   :friends, :through => :friendships
+  validates_uniqueness_of :username
+  validates_presence_of :password
+  validates_presence_of :email
 end
 
 # == Schema Information

@@ -12,9 +12,7 @@ class Vote < ActiveRecord::Base
     {:conditions => ["entry_id = ?", entry_id]}}
     
   def self.create_or_update(attributes)
-    vote = Vote.find_by_entry_id_and_user_id(
-      attributes[:entry_id], 
-      attributes[:user_id])
+    vote = Vote.find_by_entry_id_and_user_id(attributes[:entry_id], attributes[:user_id])
     if vote
       vote.value = attributes[:value]
       vote.save

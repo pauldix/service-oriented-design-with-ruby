@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  # create a new vote
+  # POST /api/v1/ratings/entries/:entry_id/users/:user_id/vote
   def create
     begin
       value = Yajl::Parser.parse(request.body.read)
@@ -19,6 +21,7 @@ class VotesController < ApplicationController
     end
   end
 
+  # GET /api/v1/ratings/users/:user_id/up
   def entry_ids_voted_up_for_user
     page      = (params[:page] || 1).to_i
     per_page  = (params[:per_page] || 25).to_i
@@ -47,6 +50,7 @@ class VotesController < ApplicationController
     render :json => data.to_json
   end
   
+  # GET /api/v1/ratings/users/:user_id/down
   def entry_ids_voted_down_for_user
     page      = (params[:page] || 1).to_i
     per_page  = (params[:per_page] || 25).to_i
@@ -75,6 +79,7 @@ class VotesController < ApplicationController
     render :json => data.to_json
   end
   
+  # GET /api/v1/ratings/entries/totals?ids=1,2
   def totals_for_entries
     entry_ids = params["ids"].split(",")
 
@@ -88,12 +93,14 @@ class VotesController < ApplicationController
     render :json => data.to_json
   end
   
+  # GET /api/v1/ratings/users/:user_id/votes
   def votes_for_users
     user_id   = params["user_id"]
     entry_ids = params["ids"].split(",")
     
     data = entry_ids.inject({}) do |result, entry_id|
-      vote = Vote.find_by_user_id_and_entry_id(user_id, entry_id)
+      vote = Vote.find_by_user_id_and_entry_id(user_id, 
+        entry_id)
       if vote
         result.merge!(entry_id => vote.value)
       else
@@ -104,6 +111,7 @@ class VotesController < ApplicationController
     render :json => data.to_json
   end
   
+  # GET /api/v1/ratings/users/:user_id/totals
   def totals_for_user
     user_id = params["user_id"]
     

@@ -2,6 +2,7 @@ api calls:
 PUT /api/v1/ratings/entries/45/users/3/vote
 GET /api/v1/ratings/users/3
 steps:
-rails ratings-service # version 2.3.4
-./script/generate rspec_model vote entry_id:string user_id:string value:string
-./script/generate rspec_controller votes
+rails ratings-service
+./script/generate model vote entry_id:string \
+  user_id:string value:string
+./script/generate controller votes
