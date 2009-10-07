@@ -27,7 +27,7 @@ class Service < Sinatra::Base
         :value => value)
       
       if vote.valid?
-        return true.to_json
+        return vote.to_json
       else
         error 400, vote.errors.to_json
       end

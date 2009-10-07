@@ -11,7 +11,7 @@ class VotesController < ApplicationController
         :value => value)
       
       if vote.valid?
-        render :json => true.to_json
+        render :json => vote.to_json
       else
         render :json => vote.errors.to_json, :status => 400
       end

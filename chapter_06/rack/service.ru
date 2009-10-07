@@ -3,7 +3,6 @@ require 'yajl'
 require 'active_record'
 require 'action_pack'
 require 'will_paginate'
-require 'sinatra'
 WillPaginate.enable_activerecord
 
 require 'models/vote.rb'
@@ -67,7 +66,7 @@ module Rack
 
       if vote.valid?
         [200, { 'Content-Type' => 'application/json' },
-          true.to_json]
+          vote.to_json]
       else
         [400, { 'Content-Type' => 'application/json' },
           vote.errors.to_json]

@@ -41,7 +41,7 @@ class ServiceController < Ramaze::Controller
           :value => value)
     
         if vote.valid?
-          response.body = true.to_json
+          response.body = vote.to_json
         else
           response.status = 400
           response.body   = vote.errors.to_json
