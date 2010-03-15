@@ -1,6 +1,4 @@
 class PauldixEntries::Entry
-  class << self; attr_accessor :hydra; end;
-
   include ActiveModel::Serializers::JSON
   include ActiveModel::Validations
 
@@ -41,11 +39,11 @@ class PauldixEntries::Entry
       block.call(entries)
     end
     
-    hydra.queue(request)
+    PauldixEntries::Config.hydra.queue(request)
   end
   
   def self.get_ids_uri(ids)
-    "http://localhost:3000/api/v1/entries?ids=#{ids.join(",")}"
+    "http://#{PauldixEntries::Config.host}/api/v1/entries?ids=#{ids.join(",")}"
   end
   
   def self.stub_all_ids(ids)
@@ -63,6 +61,6 @@ class PauldixEntries::Entry
       :headers => "", 
       :body => body,
       :time => 0.3)
-    hydra.stub(:get, get_ids_uri(ids)).and_return(response)
+    PauldixEntries::Config.hydra.stub(:get, get_ids_uri(ids)).and_return(response)
   end
 end

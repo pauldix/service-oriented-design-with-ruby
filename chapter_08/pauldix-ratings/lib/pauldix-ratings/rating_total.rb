@@ -1,6 +1,4 @@
 class PauldixRatings::RatingTotal
-  class << self; attr_accessor :hydra; end;
-
   attr_accessor :up_count, :down_count, :entry_id, :entry
   
   def initialize(json)
@@ -22,11 +20,11 @@ class PauldixRatings::RatingTotal
       block.call(ratings)
     end
     
-    hydra.queue(request)
+    PauldixRatings::Config.hydra.queue(request)
   end
   
   def self.get_ids_uri(ids)
-    "http://localhost:3000/api/v1/ratings/entries/totals?ids=#{ids.join(",")}"
+    "http://#{PauldixRatings::Config.host}/api/v1/ratings/entries/totals?ids=#{ids.join(",")}"
   end
   
   def self.stub_all_ids(ids)
@@ -42,6 +40,6 @@ class PauldixRatings::RatingTotal
       :headers => "", 
       :body => body,
       :time => 0.3)
-    hydra.stub(:get, get_ids_uri(ids)).and_return(response)
+    PauldixRatings::Config.hydra.stub(:get, get_ids_uri(ids)).and_return(response)
   end
 end
