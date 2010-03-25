@@ -1,5 +1,6 @@
 require 'cgi'
 require 'openssl'
+require 'base64'
 
 module Rack
   class RsaSigValidator
@@ -20,10 +21,11 @@ module Rack
       verb = env["REQUEST_METHOD"]
       host = env["REMOTE_HOST"]
       path = env["REQUEST_PATH"]
+      sig  = Base64.decode64(CGI.unescape(env["HTTP_X_AUTH_SIG"] || ""))
+      return false if sig == ""# Short circuit
+
       query_string = env["QUERY_STRING"]
       query_params = Hash[*query_string.split("&").map { |p| p.split("=") }.flatten.map { |p| CGI.unescape(p) }]
-      sig = query_params.delete("sig")
-      return false unless sig # Short circuit
 
       sorted_query_params = query_params.sort.map{|param| param.join("=")}
       # => ["user=mat", "tag=ruby"]
