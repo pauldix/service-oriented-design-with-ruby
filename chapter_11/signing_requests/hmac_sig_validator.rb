@@ -21,9 +21,9 @@ module Rack
       verb = env["REQUEST_METHOD"]
       host = env["REMOTE_HOST"]
       path = env["REQUEST_PATH"]
+      sig  = env["HTTP_X_AUTH_SIG"]
       query_string = env["QUERY_STRING"]
       query_params = Hash[*query_string.split("&").map { |p| p.split("=") }.flatten.map { |p| CGI.unescape(p) }]
-      sig = query_params.delete("sig")
       sig == @signer.sign(verb, host, path, query_params)
     end
   end

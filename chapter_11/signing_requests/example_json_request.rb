@@ -5,7 +5,7 @@ require 'hmac_signature'
 verb = "GET"
 host = "localhost"
 path = "/"
-query_params = {"user" => "mat", "tag" => "ruby"}
+body = %|{"name": "Trotter", occupation: "Paul's Hero"}|
 
 unescaped_sig = HmacSignature.new('our-secret-key').sign(verb, host, path, query_params)
 sig = CGI.escape(unescaped_sig)

@@ -21,6 +21,7 @@ module Rack
       verb = env["REQUEST_METHOD"]
       host = env["REMOTE_HOST"]
       path = env["REQUEST_PATH"]
+      body = env["rack.input"].read
       sig  = Base64.decode64(CGI.unescape(env["HTTP_X_AUTH_SIG"] || ""))
       return false if sig == ""# Short circuit
 
@@ -30,7 +31,7 @@ module Rack
       sorted_query_params = query_params.sort.map{|param| param.join("=")}
       # => ["user=mat", "tag=ruby"]
       canonicalized_params = sorted_query_params.join("&") # => "user=mat&tag=ruby"
-      expected_string = verb + host + path + canonicalized_params
+      expected_string = verb + host + path + canonicalized_params + body
       expected_string == @key.public_decrypt(sig)
     end
   end

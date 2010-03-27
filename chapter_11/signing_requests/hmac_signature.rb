@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'hmac'
 require 'hmac-sha2'
 require 'base64'
