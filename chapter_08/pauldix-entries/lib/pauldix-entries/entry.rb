@@ -61,6 +61,7 @@ class PauldixEntries::Entry
       :headers => "", 
       :body => body,
       :time => 0.3)
-    PauldixEntries::Config.hydra.stub(:get, get_ids_uri(ids)).and_return(response)
+    PauldixEntries::Config.hydra.stub(:get, 
+      get_ids_uri(ids)).and_return(response)
   end
 end

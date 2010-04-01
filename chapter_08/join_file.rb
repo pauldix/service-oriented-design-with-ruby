@@ -23,7 +23,8 @@ PauldixRatings::Config.bunny_client = bunny_client
 entry_ids = %w[entry1 entry2 entry3]
 PauldixEntries::Entry.stub_all_ids(entry_ids)
 PauldixRatings::RatingTotal.stub_all_ids(entry_ids)
-PauldixReadingList::ReadingList.stub_all_user_ids_with_ids(["paul"], entry_ids)
+PauldixReadingList::ReadingList.stub_all_user_ids_with_ids(
+  ["paul"], entry_ids)
 
 
 # and here is code that would be in a presenter or a 

@@ -1,7 +1,4 @@
 class PauldixReadingList::ReadingList
-  class << self; attr_accessor :hydra; end;
-  class << self; attr_accessor :host; end;
-  
   attr_accessor :entry_ids, :previous_page, :next_page
   
   def initialize(json, options = {})
@@ -71,7 +68,8 @@ class PauldixReadingList::ReadingList
       :time => 0.3)
 
     user_ids.each do |user_id|
-      PauldixReadingList::Config.hydra.stub(:get, get_by_id_uri(user_id)).and_return(response)
+      PauldixReadingList::Config.hydra.stub(:get, 
+        get_by_id_uri(user_id)).and_return(response)
     end
   end
 end

@@ -2,22 +2,28 @@ class PauldixRatings::Rating
   include ActiveModel::Serializers::JSON
   include ActiveModel::Validations
 
-  attr_accessor :user_id, :entry_id, :vote
+  ATTRIBUTES = [:user_id, :entry_id, :vote]
+  attr_accessor *ATTRIBUTES
   
   validates_presence_of :user_id, :entry_id
   validates_inclusion_of :vote, :in => %w[up down]
   
-  def initialize(attributes_or_json)
-    if attributes_or_json.is_a? String
-      from_json(attributes_or_json)
-      @attributes = @attributes.with_indifferent_access
-    else
-      @attributes = attributes_or_json.with_indifferent_access
-    end
+  def initialize(attributes = {})
+    self.attributes = attributes
+  end
+  
+  def attributes
+    ATTRIBUTES.inject(
+      ActiveSupport::HashWithIndifferentAccess.new
+      ) do |result, key|
 
-    @entry_id = @attributes[:entry_id]
-    @user_id = @attributes[:user_id]
-    @vote = @attributes[:vote]
+      result[key] = read_attribute_for_validation(key)
+      result
+    end
+  end
+  
+  def attributes=(attrs)
+    attrs.each_pair {|k, v| send("#{k}=", v)}
   end
   
   def read_attribute_for_validation(key)
@@ -46,7 +52,7 @@ class PauldixRatings::Rating
   
   def save_asynchronous
     unless @exchange
-      @exchange = PauldixRatings.bunny_client.exchange(
+      @exchange = PauldixRatings::Config.bunny_client.exchange(
         "ratings", :type => :topic, :durable => :true)
     end
     
