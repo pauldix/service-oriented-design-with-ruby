@@ -1,0 +1,54 @@
+<xs:complexType name="ItemSearchRequest">
+  <xs:sequence>
+    <xs:element name="Author" type="xs:string" minOccurs="0"/>
+    <xs:element name="BrowseNode" type="xs:string" 
+      minOccurs="0"/>
+    <xs:element name="Keywords" type="xs:string" minOccurs="0"/>
+    <xs:element name="Manufacturer" type="xs:string" 
+      minOccurs="0"/>
+    <xs:element name="MaximumPrice" type="xs:nonNegativeInteger" 
+      minOccurs="0"/>
+    <xs:element name="Publisher" type="xs:string" 
+      minOccurs="0"/>
+    <xs:element name="SearchIndex" type="xs:string" 
+      minOccurs="0"/>
+    <xs:element name="Title" type="xs:string" minOccurs="0"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="ItemSearchResponse">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="tns:OperationRequest" minOccurs="0"/>
+      <xs:element ref="tns:Items" minOccurs="0" 
+        maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Items">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="TotalResults" 
+        type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="TotalPages" type="xs:nonNegativeInteger"
+        minOccurs="0"/>
+      <xs:element ref="tns:Item" minOccurs="0" 
+        maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Item">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="DetailPageURL" type="xs:string" 
+        minOccurs="0"/>
+      <xs:element name="SalesRank" type="xs:string" 
+        minOccurs="0"/>
+      <xs:element name="SmallImage" type="tns:Image" 
+        minOccurs="0"/>
+      <xs:element ref="tns:ItemAttributes" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
