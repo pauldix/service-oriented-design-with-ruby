@@ -9,11 +9,15 @@ WillPaginate.enable_activerecord
 
 require 'models/vote.rb'
 
-class Service < Sinatra::Base
+class Service < Sinatra::Base  
   configure do
     env = ENV["SINATRA_ENV"] || "development"
     databases = YAML.load_file("config/database.yml")
     ActiveRecord::Base.establish_connection(databases[env])
+  end
+    
+  before do
+    content_type :json
   end
   
   # create or update a vote
