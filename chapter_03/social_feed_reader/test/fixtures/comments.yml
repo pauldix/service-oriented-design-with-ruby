@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  integer: 
+  integer: 
+  text: 
+
+two:
+  integer: 
+  integer: 
+  text: 
+
+
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  entry_id   :integer
+#  content    :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+

@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  integer: 
+  integer: 
+
+two:
+  integer: 
+  integer: 
+
+
+# == Schema Information
+#
+# Table name: subscriptions
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  feed_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

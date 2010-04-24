@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  integer: 
+  integer: 
+  integer: 
+
+two:
+  integer: 
+  integer: 
+  integer: 
+
+
+
+# == Schema Information
+#
+# Table name: votes
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  entry_id   :integer
+#  type       :string(255)
+#  rating     :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

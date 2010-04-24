@@ -1,0 +1,32 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  integer: 
+  integer: 
+  integer: 
+
+two:
+  integer: 
+  integer: 
+  integer: 
+
+
+
+
+# == Schema Information
+#
+# Table name: activities
+#
+#  id                :integer         not null, primary key
+#  user_id           :integer
+#  type              :string(255)
+#  feed_id           :integer
+#  followed_user_id  :integer
+#  rating            :integer
+#  entry_id          :integer
+#  content           :text
+#  following_user_id :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+

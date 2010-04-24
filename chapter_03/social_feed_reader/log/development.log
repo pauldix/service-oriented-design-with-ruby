@@ -1,0 +1,582 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015826')[0m
+Migrating to CreateFollows (20100104015917)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015917')[0m
+Migrating to CreateSubscriptions (20100104020442)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020442')[0m
+Migrating to CreateFeeds (20100104020507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020507')[0m
+Migrating to CreateEntries (20100104020608)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "up_votes_count" integer, "down_votes_count" integer, "comments_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020608')[0m
+Migrating to CreateVotes (20100104021205)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104021205')[0m
+Migrating to CreateActivities (20100104023020)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023020')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("activities")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("entries")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("feeds")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("follows")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("subscriptions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+Migrating to CreateFollows (20100104015917)
+Migrating to CreateSubscriptions (20100104020442)
+Migrating to CreateFeeds (20100104020507)
+Migrating to CreateEntries (20100104020608)
+Migrating to CreateVotes (20100104021205)
+Migrating to CreateActivities (20100104023020)
+Migrating to CreateComments (20100104023412)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100104023412')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("activities")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("entries")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("feeds")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("follows")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("subscriptions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "bio" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015826')[0m
+Migrating to CreateFollows (20100104015917)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015917')[0m
+Migrating to CreateSubscriptions (20100104020442)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020442')[0m
+Migrating to CreateFeeds (20100104020507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "url" varchar(255), "feed_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020507')[0m
+Migrating to CreateEntries (20100104020608)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "feed_id" integer, "title" varchar(255), "url" varchar(255), "content" text, "published_date" datetime, "up_votes_count" integer, "down_votes_count" integer, "comments_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020608')[0m
+Migrating to CreateVotes (20100104021205)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104021205')[0m
+Migrating to CreateActivities (20100104023020)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "associated_id" integer, "associated_type" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023020')[0m
+Migrating to CreateComments (20100104023412)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023412')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("activities")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("entries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("follows")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("subscriptions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "bio" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015826')[0m
+Migrating to CreateFollows (20100104015917)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015917')[0m
+Migrating to CreateSubscriptions (20100104020442)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020442')[0m
+Migrating to CreateFeeds (20100104020507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "url" varchar(255), "feed_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020507')[0m
+Migrating to CreateEntries (20100104020608)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "feed_id" integer, "title" varchar(255), "url" varchar(255), "content" text, "published_date" datetime, "up_votes_count" integer, "down_votes_count" integer, "comments_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020608')[0m
+Migrating to CreateVotes (20100104021205)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104021205')[0m
+Migrating to CreateActivities (20100104023020)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "event_type" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023020')[0m
+Migrating to CreateComments (20100104023412)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023412')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("activities")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("entries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("follows")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("subscriptions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "bio" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015826')[0m
+Migrating to CreateFollows (20100104015917)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "followed_user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015917')[0m
+Migrating to CreateSubscriptions (20100104020442)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020442')[0m
+Migrating to CreateFeeds (20100104020507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "url" varchar(255), "feed_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020507')[0m
+Migrating to CreateEntries (20100104020608)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "feed_id" integer, "title" varchar(255), "url" varchar(255), "content" text, "published_date" datetime, "up_votes_count" integer, "down_votes_count" integer, "comments_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020608')[0m
+Migrating to CreateVotes (20100104021205)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104021205')[0m
+Migrating to CreateActivities (20100104023020)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "type" varchar(255), "feed_id" integer, "followed_user_id" integer, "rating" integer, "entry_id" integer, "content" text, "following_user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023020')[0m
+Migrating to CreateComments (20100104023412)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023412')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("activities")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("entries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("follows")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("subscriptions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at", "bio", "email") VALUES('paul', '2010-01-04 15:03:50', '2010-01-04 15:03:50', NULL, NULL)[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at", "bio", "email") VALUES('chad', '2010-01-04 15:04:01', '2010-01-04 15:04:01', NULL, NULL)[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at", "bio", "email") VALUES('jeff', '2010-01-04 15:04:05', '2010-01-04 15:04:05', NULL, NULL)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mFollow Create (0.4ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:05:24', '2010-01-04 15:05:24', 3, 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "follows" [0m
+  [4;36;1mFollow Create (0.4ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:07:23', '2010-01-04 15:07:23', 3, 1)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "follows" [0m
+  [4;35;1mFollow Create (0.7ms)[0m   [0mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:08:48', '2010-01-04 15:08:48', 3, 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mFollow Create (0.4ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:09:17', '2010-01-04 15:09:17', 3, 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mFollow Create (0.4ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:09:26', '2010-01-04 15:09:26', 3, 1)[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mFollowActivity Create (0.2ms)[0m   [0mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-04 15:09:26', NULL, '2010-01-04 15:09:26', 3, 1, 'FollowActivity', NULL, NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mFollowActivity Create (0.1ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-04 15:09:26', 3, '2010-01-04 15:09:26', 3, 1, 'FollowActivity', NULL, NULL)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "follows" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" ORDER BY activities.id DESC LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".following_user_id = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.followed_user_id IS NULL)) [0m
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.followed_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 3)) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 3)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".user_id = 3)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 3)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "follows" [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".followed_user_Id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".followed_user_Id = 3)) [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 3)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 3)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".followed_user_id WHERE (("follows".user_id = 1)) [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 3) [0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" [0m
+  [4;36;1mFollowActivity Destroy (0.4ms)[0m   [0;1mDELETE FROM "activities" WHERE "id" = 1[0m
+  [4;35;1mFollowActivity Destroy (0.5ms)[0m   [0mDELETE FROM "activities" WHERE "id" = 2[0m
+  [4;36;1mFollow Load (0.3ms)[0m   [0;1mSELECT * FROM "follows" [0m
+  [4;35;1mFollow Destroy (0.3ms)[0m   [0mDELETE FROM "follows" WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mFollow Create (0.7ms)[0m   [0mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:35:13', '2010-01-04 15:35:13', 3, 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mFollow Create (0.7ms)[0m   [0mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-04 15:35:25', '2010-01-04 15:35:25', 3, 1)[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mFollowActivity Create (0.2ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-04 15:35:25', NULL, '2010-01-04 15:35:25', 3, 1, 'FollowActivity', NULL, NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 1)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.1ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mActivity Load (0.1ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mComment Create (0.4ms)[0m   [0mINSERT INTO "comments" ("entry_id", "created_at", "updated_at", "user_id", "content") VALUES(NULL, '2010-01-04 15:36:04', '2010-01-04 15:36:04', 3, 'foo')[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mCommentActivity Create (0.2ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-04 15:36:04', NULL, '2010-01-04 15:36:04', NULL, 3, 'CommentActivity', NULL, 'foo')[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 3)) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mCommentActivity Create (0.1ms)[0m   [0mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-04 15:36:04', 1, '2010-01-04 15:36:04', NULL, 3, 'CommentActivity', NULL, 'foo')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".following_user_id = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mFeed Create (1.0ms)[0m   [0mINSERT INTO "feeds" ("created_at", "title", "feed_url", "updated_at", "url") VALUES('2010-01-07 00:02:12', NULL, NULL, '2010-01-07 00:02:12', 'http://pauldix.net')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mFeed Load (0.3ms)[0m   [0mSELECT * FROM "feeds" LIMIT 1[0m
+  [4;36;1mSubscription Create (0.7ms)[0m   [0;1mINSERT INTO "subscriptions" ("created_at", "updated_at", "user_id", "feed_id") VALUES('2010-01-07 00:02:26', '2010-01-07 00:02:26', 3, 1)[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSubscriptionActivity Create (0.2ms)[0m   [0mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-07 00:02:26', NULL, '2010-01-07 00:02:26', NULL, 3, 'SubscriptionActivity', 1, NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 3)) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mFeed Load (0.3ms)[0m   [0mSELECT * FROM "feeds" LIMIT 1[0m
+  [4;36;1mSubscription Create (0.6ms)[0m   [0;1mINSERT INTO "subscriptions" ("created_at", "updated_at", "user_id", "feed_id") VALUES('2010-01-07 00:02:51', '2010-01-07 00:02:51', 3, 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mFeed Load (0.2ms)[0m   [0mSELECT * FROM "feeds" LIMIT 1[0m
+  [4;36;1mSubscription Create (0.3ms)[0m   [0;1mINSERT INTO "subscriptions" ("created_at", "updated_at", "user_id", "feed_id") VALUES('2010-01-07 00:03:02', '2010-01-07 00:03:02', 3, 1)[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSubscriptionActivity Create (0.2ms)[0m   [0mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-07 00:03:02', NULL, '2010-01-07 00:03:02', NULL, 3, 'SubscriptionActivity', 1, NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 3)) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSubscriptionActivity Create (0.1ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-07 00:03:02', 1, '2010-01-07 00:03:02', NULL, 3, 'SubscriptionActivity', 1, NULL)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 1 AND (activities.following_user_id IS NULL)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) ORDER BY activities.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 3 AND (activities.following_user_id IS NULL)) ORDER BY activities.id DESC LIMIT 1[0m
+  [4;35;1mFeed Load (0.2ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100104015826)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "bio" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015826')[0m
+Migrating to CreateFollows (20100104015917)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "followed_user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104015917')[0m
+Migrating to CreateSubscriptions (20100104020442)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020442')[0m
+Migrating to CreateFeeds (20100104020507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "url" varchar(255), "feed_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020507')[0m
+Migrating to CreateEntries (20100104020608)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "feed_id" integer, "title" varchar(255), "url" varchar(255), "content" text, "published_date" datetime, "up_votes_count" integer, "down_votes_count" integer, "comments_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104020608')[0m
+Migrating to CreateVotes (20100104021205)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "type" varchar(255), "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104021205')[0m
+Migrating to CreateActivities (20100104023020)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "type" varchar(255), "feed_id" integer, "followed_user_id" integer, "rating" integer, "entry_id" integer, "content" text, "following_user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023020')[0m
+Migrating to CreateComments (20100104023412)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "entry_id" integer, "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100104023412')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("activities")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("entries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("follows")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("subscriptions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("published_date", "created_at", "title", "up_votes_count", "updated_at", "url", "feed_id", "content", "down_votes_count", "comments_count") VALUES(NULL, '2010-01-07 01:44:21', NULL, NULL, '2010-01-07 01:44:21', 'asdf', NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mEntry Load (0.4ms)[0m   [0;1mSELECT * FROM "entries" LIMIT 1[0m
+  [4;35;1mUpVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("rating", "entry_id", "created_at", "updated_at", "user_id", "type") VALUES(NULL, 1, '2010-01-07 01:45:03', '2010-01-07 01:45:03', NULL, 'UpVote')[0m
+  [4;36;1mEntry Update (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: votes_count: UPDATE "entries" SET "votes_count" = COALESCE("votes_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" LIMIT 1[0m
+  [4;36;1mUpVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("rating", "entry_id", "created_at", "updated_at", "user_id", "type") VALUES(NULL, 1, '2010-01-07 01:45:34', '2010-01-07 01:45:34', NULL, 'UpVote')[0m
+  [4;35;1mEntry Update (0.2ms)[0m   [0mUPDATE "entries" SET "up_votes_count" = COALESCE("up_votes_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mEntry Load (0.4ms)[0m   [0;1mSELECT * FROM "entries" LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at", "bio", "email") VALUES('paul', '2010-01-07 01:49:11', '2010-01-07 01:49:11', NULL, NULL)[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at", "bio", "email") VALUES('jeff', '2010-01-07 01:49:18', '2010-01-07 01:49:18', NULL, NULL)[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mFollow Create (0.4ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-07 01:49:39', '2010-01-07 01:49:39', 2, 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mFollow Create (0.6ms)[0m   [0;1mINSERT INTO "follows" ("created_at", "updated_at", "followed_user_id", "user_id") VALUES('2010-01-07 01:49:47', '2010-01-07 01:49:47', 2, 1)[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mFollowActivity Create (0.2ms)[0m   [0mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, NULL, '2010-01-07 01:49:47', NULL, '2010-01-07 01:49:47', 2, 1, 'FollowActivity', NULL, NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 1)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 1)) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 2)) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUpVote Load (0.2ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".user_id = 1) AND ( ("votes"."type" = 'UpVote' ) ) [0m
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUpVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("rating", "entry_id", "created_at", "updated_at", "user_id", "type") VALUES(NULL, 1, '2010-01-07 01:54:46', '2010-01-07 01:54:46', 1, 'UpVote')[0m
+  [4;36;1mEntry Update (0.2ms)[0m   [0;1mUPDATE "entries" SET "up_votes_count" = COALESCE("up_votes_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "entries" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUpVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("rating", "entry_id", "created_at", "updated_at", "user_id", "type") VALUES(NULL, 1, '2010-01-07 01:54:56', '2010-01-07 01:54:56', 1, 'UpVote')[0m
+  [4;35;1mEntry Update (0.1ms)[0m   [0mUPDATE "entries" SET "up_votes_count" = COALESCE("up_votes_count", 0) + 1 WHERE ("id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id, type
+  [4;36;1mVoteActivity Create (0.2ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, 1, '2010-01-07 01:54:56', NULL, '2010-01-07 01:54:56', NULL, 1, 'VoteActivity', NULL, NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 1)) [0m
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM "activities" ORDER BY activities.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUpVote Load (0.4ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".user_id = 1) AND ( ("votes"."type" = 'UpVote' ) ) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUpVote Load (0.3ms)[0m   [0;1mSELECT * FROM "votes" WHERE ("votes".user_id = 1) AND ( ("votes"."type" = 'UpVote' ) ) LIMIT 1[0m
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mActivity Load (0.1ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) [0m
+  [4;36;1mEntry Load (0.4ms)[0m   [0;1mSELECT * FROM "entries" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mUpVote Create (0.6ms)[0m   [0;1mINSERT INTO "votes" ("rating", "entry_id", "created_at", "updated_at", "user_id", "type") VALUES(NULL, 1, '2010-01-07 01:56:14', '2010-01-07 01:56:14', 2, 'UpVote')[0m
+  [4;35;1mEntry Update (0.1ms)[0m   [0mUPDATE "entries" SET "up_votes_count" = COALESCE("up_votes_count", 0) + 1 WHERE ("id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id, type
+  [4;36;1mVoteActivity Create (0.1ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, 1, '2010-01-07 01:56:14', NULL, '2010-01-07 01:56:14', NULL, 2, 'VoteActivity', NULL, NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users".id = "follows".user_id WHERE (("follows".followed_user_id = 2)) [0m
+WARNING: Can't mass-assign these protected attributes: id, type
+  [4;36;1mVoteActivity Create (0.1ms)[0m   [0;1mINSERT INTO "activities" ("rating", "entry_id", "created_at", "following_user_id", "updated_at", "followed_user_id", "user_id", "type", "feed_id", "content") VALUES(NULL, 1, '2010-01-07 01:56:14', 1, '2010-01-07 01:56:14', NULL, 2, 'VoteActivity', NULL, NULL)[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".following_user_id = 1) LIMIT 1[0m

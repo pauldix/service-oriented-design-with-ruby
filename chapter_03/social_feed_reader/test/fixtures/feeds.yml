@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  string: 
+  string: 
+  string: 
+
+two:
+  string: 
+  string: 
+  string: 
+
+
+# == Schema Information
+#
+# Table name: feeds
+#
+#  id         :integer         not null, primary key
+#  title      :string(255)
+#  url        :string(255)
+#  feed_url   :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
