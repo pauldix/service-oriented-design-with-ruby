@@ -12,7 +12,8 @@ class DescribeInstancesResponse
     
     reservation_sets = []
     doc.elements.
-      each("DescribeInstancesResponse/reservationSet/item") do |element|
+      each("DescribeInstancesResponse/reservationSet/item"
+        ) do |element|
         reservation_sets << ReservationSet.build(element)
     end
     
@@ -71,6 +72,7 @@ class Instance
       :key_name => elements["keyName"].text,
       :type => elements["instanceType"].text,
       :launch_time => elements["launchTime"].text,
-      :availability_zone => elements["placement/availabilityZone"].text)
+      :availability_zone => 
+        elements["placement/availabilityZone"].text)
   end
 end

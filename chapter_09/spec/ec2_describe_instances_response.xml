@@ -1,4 +1,5 @@
-<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2009-08-15/">
+<DescribeInstancesResponse 
+  xmlns="http://ec2.amazonaws.com/doc/2009-08-15/">
   <reservationSet>
     <item>
       <reservationId>r-44a5402d</reservationId>
@@ -16,8 +17,10 @@
             <code>0</code>
             <name>running</name>
           </instanceState>
-          <privateDnsName>10-251-50-132.ec2.internal</privateDnsName>
-          <dnsName>ec2-72-44-33-4.compute-1.amazonaws.com</dnsName>
+          <privateDnsName>10-251-50-132.ec2.internal
+          </privateDnsName>
+          <dnsName>ec2-72-44-33-4.compute-1.amazonaws.com
+          </dnsName>
           <keyName>example-key-name</keyName>
           <amiLaunchIndex>23</amiLaunchIndex>
           <productCodesSet>
@@ -26,10 +29,10 @@
           <instanceType>m1.large</instanceType>
           <launchTime>2007-08-07T11:54:42.000Z</launchTime>
           <placement>
-			  <availabilityZone>us-east-1b</availabilityZone>
-	  </placement>
-	  <kernelId>aki-ba3adfd3</kernelId>
-	  <ramdiskId>ari-badbad00</ramdiskId>
+            <availabilityZone>us-east-1b</availabilityZone>
+          </placement>
+          <kernelId>aki-ba3adfd3</kernelId>
+          <ramdiskId>ari-badbad00</ramdiskId>
         </item>
         <item>
           <instanceId>i-28a64435</instanceId>
@@ -38,8 +41,10 @@
             <code>0</code>
             <name>running</name>
           </instanceState>
-          <privateDnsName>10-251-50-134.ec2.internal</privateDnsName>
-          <dnsName>ec2-72-44-33-6.compute-1.amazonaws.com</dnsName>
+          <privateDnsName>10-251-50-134.ec2.internal
+          </privateDnsName>
+          <dnsName>ec2-72-44-33-6.compute-1.amazonaws.com
+          </dnsName>
           <keyName>example-key-name</keyName>
           <amiLaunchIndex>23</amiLaunchIndex>
           <productCodesSet>
@@ -48,10 +53,10 @@
           <instanceType>m1.large</instanceType>
           <launchTime>2007-08-07T11:54:42.000Z</launchTime>
           <placement>
-			  <availabilityZone>us-east-1b</availabilityZone>
-	  </placement>
-	  <kernelId>aki-ba3adfd3</kernelId>
-	  <ramdiskId>ari-badbad00</ramdiskId>
+            <availabilityZone>us-east-1b</availabilityZone>
+          </placement>
+          <kernelId>aki-ba3adfd3</kernelId>
+          <ramdiskId>ari-badbad00</ramdiskId>
         </item>
       </instancesSet>
     </item>
