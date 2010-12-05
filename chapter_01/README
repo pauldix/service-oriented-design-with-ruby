@@ -13,3 +13,7 @@ Then you can run the service specs by doing this:
 rspec spec/service_spec.rb
 
 Note that you should be using the rspec command. It used to be spec, but with new versions this will throw an error.
+
+You can run the client specs by opening up two terminal windows and putting the two commands in each:
+ruby service.rb -p 3000
+rspec spec/client_spec.rb
