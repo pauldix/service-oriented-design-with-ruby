@@ -1,7 +1,9 @@
 require 'rubygems'
-require 'activerecord'
+require 'bundler/setup'
+
+require 'active_record'
 require 'sinatra'
-require 'models/user'
+require "#{File.dirname(__FILE__)}/models/user"
 
 # setting up our environment
 env_arg = ARGV.index("-e")

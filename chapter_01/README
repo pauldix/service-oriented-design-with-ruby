@@ -1,0 +1,15 @@
+I've updated this code example to work with bundler so specific gem versions can be more easily installed. I've also tested with Ruby 1.9.2p0.
+
+The best way to get on 1.9.2p0 if you aren't already is to use RVM (http://rvm.beginrescueend.com/). Then install bundler with the following:
+gem install bundler --version=1.0.7
+
+Then install the gems:
+bundle install
+
+Now you'll have to create the database. Do this from the command line:
+rake db:migrate
+
+Then you can run the service specs by doing this:
+rspec spec/service_spec.rb
+
+Note that you should be using the rspec command. It used to be spec, but with new versions this will throw an error.
