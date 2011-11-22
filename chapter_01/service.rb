@@ -6,7 +6,7 @@ require 'sinatra'
 require "#{File.dirname(__FILE__)}/models/user"
 
 # setting up our environment
-env_arg = ARGV.index("-e")
+env_arg = ARGV[ARGV.index("-e") + 1]
 env = env_arg || ENV["SINATRA_ENV"] || "development"
 databases = YAML.load_file("config/database.yml")
 ActiveRecord::Base.establish_connection(databases[env])

@@ -7,7 +7,7 @@ require File.dirname(__FILE__) + '/../client'
 # the database. We could change this by deleting all users in the test setup.
 describe "client" do
   before(:all) do
-    User.base_uri = "http://localhost:3000"
+    User.base_uri = "http://127.0.0.1:3000"
 
     User.destroy("paul")
     User.destroy("trotter")
