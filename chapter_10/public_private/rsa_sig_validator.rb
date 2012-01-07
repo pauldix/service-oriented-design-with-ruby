@@ -13,7 +13,7 @@ module Rack
       if signature_is_valid?(env)
         @app.call(env)
       else
-        [401, {"Content-Type" => "text/html"}, "Bad Signature"]
+        [401, {"Content-Type" => "text/html"}, ["Bad Signature"]]
       end
     end
 
