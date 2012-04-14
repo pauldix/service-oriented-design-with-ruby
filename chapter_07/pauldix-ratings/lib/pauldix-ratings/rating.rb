@@ -38,8 +38,8 @@ class PauldixRatings::Rating
       :method => :post,
       :body => {:vote => vote}.to_json)
     
-    PauldixRatings.hydra.queue(request)
-    PauldixRatings.hydra.run
+    PauldixRatings::Config.hydra.queue(request)
+    PauldixRatings::Config.hydra.run
   
     if response.code == 200
       return self
