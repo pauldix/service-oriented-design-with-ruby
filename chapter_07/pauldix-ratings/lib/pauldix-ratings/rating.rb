@@ -40,13 +40,15 @@ class PauldixRatings::Rating
     
     PauldixRatings.hydra.queue(request)
     PauldixRatings.hydra.run
-  
-    if response.code == 200
-      return self
-    else
-      errors.add(:http_code, response.code)
-      errors.add(:http_response_body, response.body)
-      return nil
+
+    request.on_complete do |response|
+      if response.code == 200
+        return self
+      else
+        errors.add(:http_code, response.code)
+        errors.add(:http_response_body, response.body)
+        return nil
+      end
     end
   end
   
