@@ -34,7 +34,7 @@ class PauldixRatings::Rating
     return false unless valid?
     
     request = Typhoeus::Request.new(
-      "/api/v1/ratings/entries/#{entry_ids}/users/#{user_id}/vote",
+      "http://#{PauldixRatings::Config.host}/api/v1/ratings/entries/#{entry_ids}/users/#{user_id}/vote",
       :method => :post,
       :body => {:vote => vote}.to_json)
     
