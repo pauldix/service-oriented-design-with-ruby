@@ -1,10 +1,7 @@
 require 'rubygems'
-gem 'activerecord', "=3.0.3"
 require 'active_record'
 require 'yaml'
 require 'logger'
-gem 'sqlite3', "=0.1.1"
-require 'sqlite3'
 
 desc "Load the environment"
 task :environment do
