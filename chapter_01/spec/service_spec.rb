@@ -1,10 +1,10 @@
+ENV['SINATRA_ENV'] = 'test'
+
 require File.dirname(__FILE__) + '/../service'
-gem 'rspec', '=2.2.0'
 require 'rspec'
-gem 'rack-test', '=0.5.6'
 require 'rack/test'
 
-set :environment, :test
+# set :environment, :test
 #Test::Unit::TestCase.send :include, Rack::Test::Methods
 
 RSpec.configure do |conf|

@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/../client'
+#require File.dirname(__FILE__) + '/../client'
+require_relative '../client.rb'
 
 # NOTE: to run these specs you must have the service running locally. Do like this:
 # ruby service.rb -p 3000 -e test
@@ -36,18 +37,22 @@ describe "client" do
   end
 
   it "should create a user" do
-    user = User.create({
-      :name => "trotter",
-      :email => "trotter@spamtown.usa",
-      :password => "whatev"})
-    User.find_by_name("trotter")["email"].should == "trotter@spamtown.usa"
+    random_name = ('a'..'z').to_a.shuffle[0,8].join
+    random_email = ('a'..'z').to_a.shuffle[0,8].join
+    user = User.create(
+      :name => random_name,
+      :email => random_email,
+      :password => 'whatev')
+    user['name'].should == random_name
+    user['email'].should == random_email
+    User.find_by_name(random_name).should == user
   end
 
   it "should update a user" do
     user = User.update("paul", :bio => "rubyist and author")
     user["name"].should == "paul"
     user["bio"].should  == "rubyist and author"
-    User.find_by_name("paul")["bio"] == "rubyist and author"
+    User.find_by_name('paul').should == user
   end
 
   it "should destroy a user" do
