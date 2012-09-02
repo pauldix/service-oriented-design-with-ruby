@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'bundler/setup'
 require 'typhoeus'
 require 'json'
 
@@ -17,10 +15,12 @@ class User
     end
   end
 
-  def self.create(attributes = {})
-    response = Typhoeus::Request.post("#{base_uri}/api/v1/users", :body => attributes.to_json)
-    if response.success?
-      JSON.parse(response.body)["user"]
+  def self.create attributes
+    response = Typhoeus::Request.post("#{base_uri}/api/v1/users", :body => attributes.to_json )
+    if response.code == 200
+      JSON.parse(response.body)['user']
+    elsif response.code == 400
+      nil
     else
       raise response.body
     end
@@ -28,8 +28,10 @@ class User
 
   def self.update(name, attributes)
     response = Typhoeus::Request.put("#{base_uri}/api/v1/users/#{name}", :body => attributes.to_json)
-    if response.success?
-      JSON.parse(response.body)["user"]
+    if response.code == 200
+      JSON.parse(response.body)['user']
+    elsif response.code == 400 || response.code == 404
+      nil
     else
       raise response.body
     end
@@ -37,12 +39,12 @@ class User
 
   def self.destroy(name)
     response = Typhoeus::Request.delete("#{base_uri}/api/v1/users/#{name}")
-    response.success?
+    response.success? # response.code == 200
   end
 
   def self.login(name, password)
     response = Typhoeus::Request.post("#{base_uri}/api/v1/users/#{name}/sessions", :body => {:password => password}.to_json)
-    if response.success?
+    if response.success? # response.code == 200
       JSON.parse(response.body)["user"]
     elsif response.code == 400
       nil
