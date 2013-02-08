@@ -111,7 +111,10 @@ describe "service" do
 
   describe "POST on /api/v1/users/:id/sessions" do
     before(:each) do
-      User.create(:name => "josh", :password => "nyc.rb rules")
+      User.create(
+        :name => "josh",
+        :password => "nyc.rb rules",
+        :email => 'josh@nyc.com')
     end
 
     it "should return the user object on valid credentials" do
