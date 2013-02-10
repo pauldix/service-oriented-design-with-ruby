@@ -1,3 +1,6 @@
+require 'yaml'
+YAML::ENGINE.yamler = 'syck'
+
 # Don't change this file!
 # Configure your app in config/environment.rb and config/environments/*.rb
 
