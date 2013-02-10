@@ -2,16 +2,16 @@
 
 <table>
   <tr>
-    <th>String</th>
-    <th>String</th>
-    <th>String</th>
+    <th>Name</th>
+    <th>Bio</th>
+    <th>Email</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.string %></td>
-    <td><%=h user.string %></td>
-    <td><%=h user.string %></td>
+    <td><%=h user.name %></td>
+    <td><%=h user.bio %></td>
+    <td><%=h user.email %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
