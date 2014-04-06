@@ -18,9 +18,9 @@ end
   url_queue.push "http://localhost:3000/api/v1/entries/#{i}"
 end
   
-responses = []
-while responses.size < 99
-  responses << @responses.pop
+processed_responses = []
+while processed_responses.size < 99
+  processed_responses << responses.pop
 end
 
 # do something with the responses
