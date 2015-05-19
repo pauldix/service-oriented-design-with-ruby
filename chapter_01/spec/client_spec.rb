@@ -27,13 +27,13 @@ describe "client" do
 
   it "should get a user" do
     user = User.find_by_name("paul")
-    user["name"].should  == "paul"
-    user["email"].should == "paul@pauldix.net"
-    user["bio"].should   == "rubyist"
+    expect(user["name"]).to eq "paul"
+    expect(user["email"]).to eq "paul@pauldix.net"
+    expect(user["bio"]).to eq "rubyist"
   end
 
   it "should return nil for a user not found" do
-    User.find_by_name("gosling").should be_nil
+    expect(User.find_by_name("gosling")).to eq nil
   end
 
   it "should create a user" do
@@ -43,29 +43,29 @@ describe "client" do
       :name => random_name,
       :email => random_email,
       :password => 'whatev')
-    user['name'].should == random_name
-    user['email'].should == random_email
-    User.find_by_name(random_name).should == user
+    expect(user["name"]).to eq random_name
+    expect(user["email"]).to eq random_email
+    expect(User.find_by_name(random_name)).to eq user
   end
 
   it "should update a user" do
     user = User.update("paul", :bio => "rubyist and author")
-    user["name"].should == "paul"
-    user["bio"].should  == "rubyist and author"
-    User.find_by_name('paul').should == user
+    expect(user["name"]).to eq "paul"
+    expect(user["bio"]).to eq "rubyist and author"
+    expect(User.find_by_name('paul')).to eq user
   end
 
   it "should destroy a user" do
-    User.destroy("bryan").should == true
-    User.find_by_name("bryan").should be_nil
+    expect(User.destroy("bryan")).to eq true
+    expect(User.find_by_name("bryan")).to eq nil
   end
 
   it "should verify login credentials" do
     user = User.login("paul", "strongpass")
-    user["name"].should == "paul"
+    expect(user["name"]).to eq "paul"
   end
 
   it "should return nil with invalid credentials" do
-    User.login("paul", "wrongpassword").should be_nil
+    expect(User.login("paul", "wrongpassword")).to eq nil
   end
 end
