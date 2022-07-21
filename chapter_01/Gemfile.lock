@@ -42,7 +42,7 @@ GEM
     typhoeus (0.4.2)
       ffi (~> 1.0)
       mime-types (~> 1.18)
-    tzinfo (0.3.33)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
